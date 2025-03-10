@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor Universal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>🌍 Traductor Universal 🎙️</h1>
+    
+    <div class="contenedor">
+        <div class="seccion">
+            <h2>📝 Texto de Entrada</h2>
+            <p id="estado">⏸️ Detenido</p>
+            <button id="toggleListen">🎤 Activar / Detener Escucha</button>
+            <textarea id="mensaje" placeholder="Escribe o usa el micrófono..." ></textarea>
+            <p><strong>🌐 Idioma detectado:</strong> <span id="idioma">-</span></p>
+        </div>
+        
+        <div class="seccion">
+            <h2>🔄 Traducción</h2>
+            <label for="idiomaDestino">Selecciona el idioma:</label>
+            <select id="idiomaDestino">
+                <option value="en">Inglés</option>
+                <option value="es">Español</option>
+                <option value="fr">Francés</option>
+                <option value="de">Alemán</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Portugués</option>
+                <option value="ru">Ruso</option>
+                <option value="ja">Japonés</option>
+                <option value="zh-cn">Chino</option>
+                <option value="ar">Árabe</option>
+            </select>
+            <p><strong id="traduccion-titulo">Traducción:</strong></p>
+            <textarea id="traduccion" readonly placeholder="Aquí aparecerá la traducción..."></textarea>
+            <audio id="audio" controls></audio>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
